@@ -187,7 +187,7 @@ const connect = () => {
         pearls = pearls.filter(pearl => {
             return getNanoSecTime() - lastSeenEnderPearls[pearl.uuid] <= 1000000000;
         })
-        //if playerpearl has pearls that are not in the pearl list remove them
+        //if playerPearl has pearls that are not in the pearl list remove them
         PearlPlayer.forEach((value, key) => {
             if(!pearls.some(pearl => pearl.uuid === key)) {
                 PearlPlayer.delete(key)
@@ -235,7 +235,7 @@ const connect = () => {
         if(entity.displayName === "Thrown Ender Pearl" && players.length > 0) {
             let nearest = players[0]
             for(let index = 0; index < players.length; index++) {
-                // after 5 seconds of spawning do smth
+                // after 5 seconds of spawning do smith
                 if(entity.position.distanceTo(players[index].position) < entity.position.distanceTo(nearest.position) && entity.position.distanceTo(players[index].position) < 3 && getNanoSecTime() - spawnTime > 500) {
                     //log the nearest player and distance
                     nearest = players[index]
@@ -285,7 +285,6 @@ function numbToVector(slot) {
 
 function vectorToNumb(pos) {
     let vec = vec3(Math.floor(pos.x), 105, Math.floor(pos.z))
-    // simplify this with the vectors array
     let returnable
     for(let index = 0; index < vectors.length; index++) {
         if(vec.x === vectors[index].x && vec.z === vectors[index].z) {
@@ -333,7 +332,6 @@ function decrypt(message) {
 
 function encrypt(message) {
     try {
-        //fix this above against rce
         return require('child_process').execSync('java -jar Decryptor.jar ' + credentials[3] + ' -e \"' + message + "\"").toString().replace("\n", "").replace("\r", "")
     } catch(e) {
         return undefined
@@ -345,10 +343,7 @@ function sendWhisperToPlayer(player, message, instance) {
     if(messagesWaiting.indexOf(encodedMessage) === -1) {
         messagesWaiting.push(encodedMessage)
     }
-    //add when message is not currently in it
     console.log(messagesWaiting.length)
-    //if player is online
-    //make that the bot cannot get kicked for spamming
     if(getNanoSecTime() - lastMessageSent > 500) {
         if(instance !== undefined && instance.players[player] !== undefined) {
             instance.chat("/msg " + player + " " + message)
