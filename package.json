@@ -1,32 +1,9 @@
 {
-  "name": "helperbot",
-  "version": "0.0.10",
-  "description": "A mineflayer bot that helps you do things in minecraft.",
-  "main": "helperbot.js",
-  "scripts": {
-    "test": "node helperbot.js"
-  },
-  "bin": {
-    "helperbot": "./helperbot.js"
-  },
-  "keywords": [
-    "mineflayer",
-    "minecraft",
-    "bot",
-    "client"
-  ],
-  "author": "Darthfett",
-  "license": "MIT",
+  "name": "minecraft bot",
+  "version": "1.0.0",
   "dependencies": {
-    "mineflayer": "~2.1.0",
-    "mineflayer-navigate": "git://github.com/darthfett/mineflayer-navigate.git",
-    "optimist": "~0.6.1",
-    "prompt": "~1.0.0",
-    "requireindex": "~1.1.0",
-    "string": "~3.3.3",
-    "mineflayer-blockfinder": "~0.0.7",
-    "mineflayer-scaffold": "git://github.com/darthfett/mineflayer-scaffold.git",
-    "minecraft-data": "~2",
-    "vec3": "^0.1.3"
+    "mineflayer": "^4.5.1",
+    "mineflayer-auto-eat": "^2.3.3",
+    "vec3": "^0.1.7"
   }
 }
