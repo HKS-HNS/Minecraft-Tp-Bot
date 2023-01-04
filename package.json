@@ -2,7 +2,7 @@
   "name": "minecraft bot",
   "version": "1.0.0",
   "dependencies": {
-    "mineflayer": "^4.5.1",
+    "mineflayer": "^4.6.0",
     "mineflayer-auto-eat": "^2.3.3",
     "vec3": "^0.1.7"
   }
